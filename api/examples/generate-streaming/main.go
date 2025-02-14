@@ -16,7 +16,7 @@ func main() {
 
 	// By default, GenerateRequest is streaming.
 	req := &api.GenerateRequest{
-		Model:  "gemma2",
+		Model:  "llama3.2-vision:11b",
 		Prompt: "how many planets are there?",
 	}
 

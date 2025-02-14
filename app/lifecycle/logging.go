@@ -12,7 +12,7 @@ import (
 )
 
 func InitLogging() {
-	level := slog.LevelInfo
+	level := slog.LevelDebug
 
 	if envconfig.Debug() {
 		level = slog.LevelDebug

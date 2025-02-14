@@ -1127,20 +1127,21 @@ func allowedHostsMiddleware(addr net.Addr) gin.HandlerFunc {
 }
 
 func (s *Server) GenerateRoutes() http.Handler {
-	config := cors.DefaultConfig()
-	config.AllowWildcard = true
-	config.AllowBrowserExtensions = true
-	config.AllowHeaders = []string{"Authorization", "Content-Type", "User-Agent", "Accept", "X-Requested-With"}
-	openAIProperties := []string{"lang", "package-version", "os", "arch", "retry-count", "runtime", "runtime-version", "async", "helper-method", "poll-helper", "custom-poll-interval"}
-	for _, prop := range openAIProperties {
-		config.AllowHeaders = append(config.AllowHeaders, "x-stainless-"+prop)
-	}
-	config.AllowOrigins = envconfig.Origins()
+	//config := cors.DefaultConfig()
+	//config.AllowWildcard = true
+	//config.AllowBrowserExtensions = true
+	//config.AllowHeaders = []string{"Authorization", "Content-Type", "User-Agent", "Accept", "X-Requested-With"}
+	//openAIProperties := []string{"lang", "package-version", "os", "arch", "retry-count", "runtime", "runtime-version", "async", "helper-method", "poll-helper", "custom-poll-interval"}
+	//for _, prop := range openAIProperties {
+	//	config.AllowHeaders = append(config.AllowHeaders, "x-stainless-"+prop)
+	//}
+	//config.AllowOrigins = envconfig.Origins()
 
 	r := gin.Default()
 	r.Use(
-		cors.New(config),
-		allowedHostsMiddleware(s.addr),
+		//cors.New(config),
+		cors.Default(),
+		//allowedHostsMiddleware(s.addr),
 	)
 
 	r.POST("/api/pull", s.PullHandler)

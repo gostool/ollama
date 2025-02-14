@@ -25,7 +25,7 @@ func main() {
 	}
 
 	req := &api.GenerateRequest{
-		Model:  "llava",
+		Model:  "llama3.2-vision:11b",
 		Prompt: "describe this image",
 		Images: []api.ImageData{imgData},
 	}
