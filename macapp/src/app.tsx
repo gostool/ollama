@@ -32,7 +32,7 @@ export default function () {
                 Let's get you up and running with your own large language models.
               </p>
               <button
-                onClick={() => setStep(Step.CLI)}
+                onClick={() => setStep(Step.FINISH)}
                 className='no-drag rounded-dm mx-auto my-8 w-[40%] rounded-md bg-black px-4 py-2 text-sm text-white hover:brightness-110'
               >
                 Next
